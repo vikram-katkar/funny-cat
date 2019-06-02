@@ -6,14 +6,7 @@ pipeline {
     options {
         disableConcurrentBuilds()
     }
-
-	tools {nodejs "nodejs"}
-
 stages {
-
-		stage("Test - Unit tests") {
-			steps { runUnittests() }
-		}
 
         stage("Build") {
             steps { buildApp() }
@@ -24,12 +17,6 @@ stages {
 		}
 
 	}
-}
-
-
-def runUnittests() {
-	sh "npm install && npm cache clean --force"
-	sh "npm run test"
 }
 
 def buildApp() {
