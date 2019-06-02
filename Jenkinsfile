@@ -7,6 +7,8 @@ pipeline {
         disableConcurrentBuilds()
     }
 
+	tools {nodejs "nodejs"}
+
 stages {
 
 		stage("Test - Unit tests") {
